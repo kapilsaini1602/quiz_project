@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!--  Custom CSS---->
+    <style>
+    .all_product_heading
+{
+
+	margin: 1em 0 0.5em 0;
+	margin-top:0px;
+	font-weight: normal;
+	position: relative;
+	font-size: 28px;
+	line-height: 40px;
+	background: lightcyan;
+	background:lightcyan;
+	border: 1px solid #fff;
+	padding: 5px 15px;
+	color: black;
+	border-radius: 0 10px 0 10px;
+	box-shadow: inset 0 0 5px rgba(53,86,129, 0.5);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+}
+.g {
+  text-align: center;
+  	border: 1px solid #fff;
+	padding: 5px 15px;
+	color: black;
+	font-size: 28px;
+}
+.log
+{
+	background: lightblue;
+
+color: black;
+
+}
+
+
+</style>
+</head>
+<body>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <p class="fs-1 text-center all_product_heading mt-2">Summary</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="col-lg-4 offset-lg-4  box0 ">
+        <div class="card-columns" style="padding: 10px; margin: 10px;">
+            <div class="card" align="centre " style=" width: 32rem; border:2px black solid">
+
+
+                <div class="card-body">
+                    {% for k in user %} <!--Looping-->
+                    <span class="card-title"><h4>Hello {{k.name}},</h4></span>
+                    <hr>
+
+                    <p class="card-text mt-1"><h5>Here are the answers you selected:</h5> </p>
+                    <hr>
+                    <p class="card-text"><b>Who is the best cricketer in the world?</b></p>
+                    <p class="card-text">{% if k.question1 %}{{k.question1}} {%else%} You did not answer this question {%endif%}</p>
+                    <hr>
+                    <p class="card-text"><b>What are the colors in the indian national flag?</b></p>
+                    <p class="card-text">{% if k.question2 %}{{k.question2}} {%else%} You did not answer this question {%endif%}</p>
+                    {%endfor%}
+
+
+
+                </div>
+
+
+                <div class="col-lg-4 offset-lg-4  box0 ">
+                    <a href="../../../../" style="mx-auto" class="btn btn-primary btn-md active mt-4" role="button" aria-pressed="true">&nbsp&nbspFinish&nbsp&nbsp</a>
+                </div>
+                <a href="../../../history"> <button type="button" class="btn btn-primary btn-lg btn-block ">History</button></a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+
+<div class="container mt-5">
+    <div class="row ">
+        <form method="POST" action="../summary/{{id}}">
+
+            {% csrf_token %}
+            <div class="col-md-10 offset-2">
+                <h3 class="mt-5">What are the colors in the indian national flag?</h3>
+
+
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox"  name="checks[]" value="White" >
+                        <label class="form-check-label"style="font-size:18px;"  >White</label>
+                    </div>
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox"  name="checks[]" value="Yellow">
+                        <label class="form-check-label" style="font-size:18px;" > Yellow</label>
+                    </div>
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox"  name="checks[]" value="Orange">
+                        <label class="form-check-label" style="font-size:18px;" >Orange</label>
+                    </div>
+                                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox"  name="checks[]" value="Green">
+                        <label class="form-check-label" style="font-size:18px;" >Green</label>
+                    </div>
+
+
+            </div>
+
+            <div class="col-lg-4 offset-lg-4  box0 ">
+                <div class="d-grid gap-2 mt-5">
+                    <input type="submit" value="Next" class="btn btn-primary mt-4 log">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
